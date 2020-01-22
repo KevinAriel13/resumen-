@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resumen OOP</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <p>en JavaScript necesitamos las caracteristicas y principios para cada objeto.</p></head>
+
+<body style="background-color: aqua;" >
+
+    <center><h1 style="background-color: #BF00FF" >Inmersión en los principios de la OOP</h1></center>
+    <h1 style="background-color: #A9F5D0 ;">Principios Programacion Orientada a Objetos.</h1>
+    <p>La programacion orientada a objetos es uno de los paradigmas de programacion mas populares.</p>
+    <p>una de las claves del exito del enfoque de la OOP en que nos permite tener un diseño modular y reutilizacion de codigo.</p>
+    <p>la programacion orientada a objetos se basa en dos requisitos:</p>
+    <h2>* Su capacidad para modelar un problema a través de objetos. Para satisfacer el primer requisito, el lenguaje debe permitir que el desarrollador utilice los objetos de forma real y definiendo las relaciones.</h2>
+    <h2>* El apoyo que algunos principios le otorgan a la modularidad y reutilizacion de codigo.</h2>
+    <li>Asociación: esta es la capacidad del objeto para referir otro objeto independiente.</li>
+    <li>Agregación: esta es la capacidad del objeto para incrustar uno o más independientes objetos.</li>
+    <li>Composición: esta es la capacidad del objeto para incrustar uno o más dependientes objetos.</li>
+    <p style="background-color:#64FE2E ;">El segundo requisito se cumple si admite los siguientes principios:</p>
+    <li>Encapsulacion: Esto nos permite concentrarno en una sola entidad de datos con su codigo.</li>
+    <li>Herencia: Esto nos permite que un onjeto adquiere caracteristicas de uno o más objetos.</li>
+    <li>Polimosfismo: Nos permite procesar onjetos de manera diferente.</li>
+    <h1>JavaScript</h1>
+    <p>JavaScript como un verdadero lenguaje orientado a objetos debido a su falta de concepto de clase y porque no exige el cumplimiento de los principios de OOP.</p>
+    <p>en JavaScript necesitamos las caracteristicas y principios para cada objeto. Tambien permite que el desarrollador elija construcciones que le permitan que el codigo este orientado a objetis o no.</p>
+    <center><h1>Abstraccion y soporte de modelado.</h1> </center>
+    <p>El primer requisito es el apoyo a modelar un problema a través de objetos. JavaScript admite objetos, pero aquí deberíamos determinar si son compatibles para poder modelar la realidad.</p>
+    <p>Necesitamos un modelo porque es una simplificación de realidad, nos permite reducir la complejidad ofreciendo una visión desde una perspectiva particular y nos ayuda a razonar sobre una relación entre entidades.</p>
+    <center><h1>Asociacion.</h1> </center>
+    <p>Esto es una relacion entre objetos pero cada uno es independiente entre si. Nos da a entender que un objeto puede existir sin otro. </p>
+    <h1>Ejemplo:</h1>
+    <p>función Persona (nombre, apellido) {
+        this.name = nombre;
+        this.surname = apellido;
+        this.parent = null;
+        }
+        var johnSmith = persona nueva ("John", "Smith");
+        var fredSmith = nueva persona ("Fred", "Smith");
+        fredSmith.parent = johnSmith;</p>
+    <p>La asignación del objeto johnSmith a la propiedad padre del objeto fredSmith
+        establece una asociación entre los dos objetos. Por supuesto, el objeto johnSmith vive
+        independientemente del objeto fredSmith y viceversa. Ambos pueden ser creados y eliminados
+        independientemente el uno al otro.</p>
+        <center><h1>Agregación.</h1> </center>
+        <p>En este sentido la agregación es una forma especial de relación de asociación donde un objeto tiene un papel principal
+            que el otro Por lo general, este rol principal determina un tipo de propiedad de un objeto en
+            relación con el otro. El objeto propietario a menudo se denomina agregado y el objeto propietario . </p>
+        <h1>Ejemplo:</h1>
+        <p>var empresa = {
+             nombre: "ACME Inc.",
+             empleados: []
+            };
+            var johnSmith = persona nueva ("John", "Smith");
+            var marioRossi = Persona nueva ("Mario", "Rossi");
+            company.employees.push (johnSmith);
+            company.employees.push (marioRossi);</p>
+        <p> Incluso si el apoyo de
+            las dos relaciones son sintácticamente idénticas, es decir, la asignación o el apego de un
+            objetar a una propiedad, desde un punto de vista conceptual representan diferentes situaciones.
+            La agregación es el mecanismo que le permite crear un objeto que consta de varios
+            objetos, mientras que la asociación relaciona objetos autónomos.</p>
+            <p>La asociación y la agregación plantean una restricción más conceptual que técnico.</p>
+            <center><h1>Composición.</h1></center>
+            <p>La composicion es un tipo fuerte de agregación, donde cada objeto componente no tiene vida independiente sin su dueño, el agregado. </p>
+                <h1>var person = {name: "John",
+                      apellido: "Smith",
+                      habla a: {
+                      calle: "123 Duncannon Street",
+                      ciudad: "Londres",
+                      país: "Reino Unido"
+                      }};</h1>
+                <p>Se elimina el objeto de dirección.
+                    En este caso, la relación estricta entre la persona y su dirección se expresa en
+                    JavaScript asigna directamente el literal que representa la dirección a la propiedad de la dirección.</p>
+                    <center><h1>Encapsulación.</h1></center>
+                    <p>La encapsulacion es la capacidad de capturar en una entidad ambos datos ocultando la complejidad de la implementacion del mismo. Este es un principio muy poderoso, a menudo
+                        encontrado en el mundo real que nos permite usar un objeto sin saber cómo funciona internamente trabajos.</p>
+                        <h1>var empresa = {
+                             nombre: "ACME Inc.",
+                             empleados: [],
+                             sortEmployeesByName: function () {...}
+                            };</h1>
+                            <p> Si necesitamos obtener una lista ordenada de empleados de
+                                empresa, simplemente necesitamos saber que el método sortEmployeesByName ()
+                                realiza esta tarea. No necesitamos saber cómo funciona este método, qué algoritmo
+                                implementos. </p>
+                                <center><h1>Herencia</h1></center>
+                                <p>La herencia permite que un objeto adquiera propiedades de objetos existentes. En OOP, la herencia permite que nuevos objetos adquieran las propiedades de los objetos existentes. Esta
+                                    La relación entre dos objetos es muy común y se puede encontrar en muchas situaciones en
+                                    vida real.</p>
+                                    <p>El concepto de herencia es el mismo, aunque, por supuesto, no parece adecuado a JavaScript podemos implementar la herencia en JavaScript de varias maneras. </p>
+                                        <h1>función Persona () {
+                                            this.name = "";
+                                            this.surname = "";</h1>
+                                            <center><h1>Polimorfismo</h1></center>
+                                            <p>Principalmente, reduce el acoplamiento en nuestra aplicación y, en algunos casos, permite crear
+                                                Código más compacto.
+                                                Las formas más comunes de soportar el polimorfismo con un lenguaje de programación incluyen:
+                                                Métodos que toman parámetros con diferentes tipos de datos (sobrecarga)
+                                                Manejo de tipos genéricos, no conocidos de antemano (polimorfismo paramétrico)
+                                                Expresiones cuyo tipo puede ser representado por una clase y clases derivadas de ella.
+                                                (subtipo de polimorfismo o polimorfismo de inclusión)</p>
+                                </body> 
+</html>

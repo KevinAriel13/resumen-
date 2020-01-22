@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabajando con encapsulación y
+        Ocultación de información</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color: bisque;">
+    <center><h1>Trabajando con encapsulación y
+        Ocultación de información</h1></center>
+    <p>Usando los métodos expuestos por el objeto para manipular los datos, aprovechamos el
+        principio de encapsulación ignorando su complejidad interna y detalles de implementación. En
+        en otras palabras, la encapsulación oculta los detalles internos sobre cómo manipula el objeto
+        sus datos</p>
+        <p>Al ocultar detalles internos, obtenemos
+            al menos dos grandes beneficios:</p>
+            <li>Proporcionamos una manera simple de usar un objeto, ocultando la complejidad interna</li>
+            <li>Desacoplamos la implementación interna del uso del objeto, simplificando
+                gestión del cambio</li>
+                <p>Un objeto es público por defecto. Sin embargo, se pueden usar algunos patrones comunes para obtener
+                    diferentes niveles de información oculta como sucede en la mayoría de los lenguajes clásicos de OOP.</p>
+                    <p>Los objetos JavaScript no se preocupan por la privacidad. Todas las propiedades y métodos son públicos.
+                        accesible si no se toma precaución. Entonces, si queremos evitar el acceso a algunas propiedades o
+                        métodos relacionados con los detalles de implementación interna, tenemos que establecer una estrategia.</p>
+                            <h1>función TheatreSeats () {
+                                 this._seats = [];
+                                }
+                                TheatreSeats.prototype.placePerson = function (persona) {
+                                 this._seats.push (persona);
+                                };</h1>
+                                <h1 style="background-color: aqua;">Niveles de privacidad con cierre</h1>
+                                <p>Corregir las inconsistencias del enfoque basado en convenciones es no usar
+                                    propiedades para miembros internos pero declarando variables dentro del constructor.</p>
+                                    <h1>función TheatreSeats () {
+                                          asientos var = [];
+                                          this.placePerson = function (persona) {
+                                          asientos.push (persona);
+                                          };
+                                        }</h1>
+                                        <p>Usando este enfoque, podemos continuar usando el constructor como de costumbre evitando el acceso
+                                            al contenedor interno real: la variable de los asientos. Estamos explotando lo interno
+                                            entorno de la función TheatreSeats () para ocultar los detalles de implementación y colocar
+                                            Las bases para construir las partes privadas y públicas de los objetos JavaScript.</p>
+                                </body>
+</html>
